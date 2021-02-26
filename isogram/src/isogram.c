@@ -16,8 +16,10 @@ bool is_isogram(const char* phrase)
   {
     if (isalpha(phrase[i]))
     {
-      counter[toupper(phrase[i]) - 65]++;
-      if (counter[toupper(phrase[i]) - 65] > 1)
+      int index = toupper(phrase[i]) - 'A';
+      counter[index]++;
+
+      if (counter[index] > 1)
       {
         return false;
       }
