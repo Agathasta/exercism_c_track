@@ -1,5 +1,7 @@
 #include "grains.h"
-#include <math.h>
+
+#define NUM_SQUARES 64
+
 
 uint64_t square(uint8_t index)
 {
@@ -7,7 +9,8 @@ uint64_t square(uint8_t index)
   {
     return 0;
   }
-  return pow(2, index - 1);
+  // For unsigned lhs, the value of LHS << RHS is the value of LHS * 2^RHS
+  return 1ull << (index - 1);
 }
 
 uint64_t total(void)
